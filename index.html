@@ -1,277 +1,83 @@
 <!DOCTYPE html>
-<!-- saved from url=(0018)http://pitest.org/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta charset="utf-8">
-    <title>PIT Mutation Testing</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <link href="http://pitest.org/css/bootstrap.css" rel="stylesheet">
-    <link href="http://pitest.org/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="http://pitest.org/css/pit.css" rel="stylesheet">
-
-
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-
-    <link rel="shortcut icon" href="http://pitest.org/images/favicon.png">
-
-
-  <style type="text/css" id="holderjs-style">.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}.holderjs-fluid {font-size:16px;font-weight:bold;text-align:center;font-family:sans-serif;margin:0}</style><script src="./BaduaPage_files/cb=gapi.loaded_2" async=""></script><script src="./BaduaPage_files/cb=gapi.loaded_1" async=""></script><script src="./BaduaPage_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0}</style></head>
+    <title>Luizbaptistao.github.io by luizbaptistao</title>
+  </head>
 
   <body>
+    <div id="container">
+      <div class="inner">
 
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">BA-DUA</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="">
-                <a href="./index.html">Home</a>
-              </li>
-              <li class="">
-                <a href="http://pitest.org/quickstart">Quickstart</a>
-              </li>
-              <li class="">
-                <a href="http://pitest.org/faq">FAQ</a>
-              </li>
-              <li class="">
-                <a href="http://pitest.org/downloads">Downloads</a>
-              </li>
-              <li class="">
-                <a href="http://pitest.org/news">News</a>
-              </li>
-              <li class="">
-                <a href="http://pitest.org/links">Links</a>
-              </li>
-              <li class="">
-                <a href="http://pitest.org/about">About</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <header>
+          <h1>Luizbaptistao.github.io</h1>
+          <h2>GitHub Page</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/luizbaptistao" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        </section>
+
+        <footer>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+                  <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-48943032-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
       </div>
     </div>
-
-
-   <div class="jumbotron masthead">
-  <div class="container">
-<img src="./BaduaPage_files/logo-saeg1.png">
-<br><br>
-                <h1>BA-DUA</h1>
-                <p class="description">PIT is a state of the art <strong>mutation testing</strong> system, providing <strong>gold standard test coverage</strong> for Java and the jvm. Its fast, scalable and integrates with modern test and build tooling.</p>
-    
-    <ul class="masthead-links">
-      <li>
-        <a href="http://groups.google.com/group/pitusers">User Group</a>
-      </li>
-      <li>
-        <a href="https://github.com/hcoles/pitest/issues">Issues</a>
-      </li>
-     <li>
-        <a href="https://github.com/hcoles/pitest">Source</a>
-      </li>
-      <li>
-        <a href="http://mvnrepository.com/artifact/org.pitest/pitest">Maven Central</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
-
-<div class="container">
-
-  <div class="marketing">
-
-    <h1>What is Dataflow Testing?</h1>
-    
-
-    <div class="row-fluid">
-      <div class="span12">
-        <p class="marketing-info">
-        Mutation testing is conceptually quite simple.</p><p>
-
- </p><p class="marketing-info"> Faults (or <strong>mutations</strong>) are automatically seeded into your code, then your tests are run. If your tests fail then the mutation is <strong>killed</strong>, if your tests pass then the mutation <strong>lived</strong>. </p>
-
-<p class="marketing-info">The quality of your tests can be gauged from the percentage of mutations killed.</p> 
-
-<h1>What is?</h1>
-<p class="marketing-byline">Really it is quite simple</p>
-
-<p class="marketing-info">To put it another way - PIT runs your unit tests against automatically modified versions of your application code. When the application code changes, it should produce different results and cause the unit tests to fail. If a unit test does not fail in this situation, it may indicate an issue with the test suite. </p>
-
-<h1>Why?</h1>
-<p class="marketing-byline">What's wrong with line coverage?</p>
-
-<p class="marketing-info">Traditional test coverage (i.e line, statement, branch etc) measures only which code is <strong>executed</strong> by your tests. It does <strong>not</strong> check that your tests are actually able to <strong>detect faults</strong> in the executed code. It is therefore only able to identify code the is definitely <strong>not tested</strong>.</p>
-
-<p class="marketing-info">The most extreme example of the problem are tests with no assertions. Fortunately these are uncommon in most code bases. Much more common is code that is only <strong>partially tested</strong> by its suite. A suite that only partially tests code can still execute all its branches <i>(<a href="http://pitest.org/weak_tests">examples</a>)</i>.</p> 
-
-<p class="marketing-info">As it is actually able to detect whether each statement is meaningfully tested, mutation testing is the <strong>gold standard</strong> against which all other types of coverage are measured.</p> 
-
-<h1>How?</h1>
-<p class="marketing-byline"></p>
-
-<p class="marketing-info">There are other mutation testing system for Java, but they are not widely used.</p><p>
-
-</p><p class="marketing-info">They are mostly slow, difficult to use and written to meet the needs of academic research rather than real development teams.</p><p>
-
-</p><p class="marketing-info">PIT is different. It's</p>
-
-
-<ul class="marketing-info">
-<li><strong>fast</strong> - can analyse in <strong>minutes</strong> what would take earlier systems <strong>days</strong></li>
-<li><strong>easy to use</strong> - works with ant, maven, gradle and others</li>
-<li><strong>actively developed</strong></li>
-<li><strong>actively supported</strong></li>
-</ul>
-
-<p class="marketing-info">The reports produced by PIT are in an easy to read format combining <strong>line coverage</strong> and <strong>mutation coverage</strong> information.</p>
-
-<p><img src="./BaduaPage_files/wicket_core_example32.png">
-
-</p><p><i>Example snippet taken from coverage report of <a href="http://wicket.apache.org/">Wicket Core</a></i></p>
-
-<p><i>Light green shows line coverage, dark green shows mutation coverage.</i></p>
-
-<p><i>Light pink show lack of line coverage, dark pink shows lack of mutation coverage.</i></p>
-
-      </div>
-  
-    </div>
-
-    
-
-    
-    
-    
-    
-
-  </div>
-
-
-    <hr class="soften">
-
-<h1>Recent news</h1>
-          <div class="row-fluid">
-          
-   
-              <h3>December 11, 2013</h3>
-              <h2><a href="http://pitest.org/posts/2013/12/11/release_0.32/">PIT 0.32 released</a></h2>
-      
-
-
-
-   
-              <h3>September  2, 2013</h3>
-              <h2><a href="http://pitest.org/posts/2013/09/02/release_0.31/">PIT 0.31 released</a></h2>
-      
-
-
-
-   
-              <h3>July 21, 2013</h3>
-              <h2><a href="http://pitest.org/posts/2013/07/21/site_revamp/">Pitest.org website revamp</a></h2>
-      
-
-
-
-          </div>
-
-
-</div>
-
-
-
-
-
-
-
-    <!-- Footer
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-        <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons License</a></p>
-
-        <ul class="footer-links">
-          <li><a href="http://pitest.org/privacy">privacy information</a></li>
-          <li class="muted">≈</li>
-          <li><a href="http://pitest.org/about">about</a></li>
-          <li class="muted">≈</li>
-          <li><a href="http://pitest.org/how_to_help">help</a></li>
-        </ul>
-      </div>
-    </footer>
-
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="./BaduaPage_files/widgets.js"></script>
-    <script src="./BaduaPage_files/jquery.js"></script>
-    <script src="./BaduaPage_files/bootstrap-transition.js"></script>
-    <script src="./BaduaPage_files/bootstrap-alert.js"></script>
-    <script src="./BaduaPage_files/bootstrap-modal.js"></script>
-    <script src="./BaduaPage_files/bootstrap-dropdown.js"></script>
-    <script src="./BaduaPage_files/bootstrap-scrollspy.js"></script>
-    <script src="./BaduaPage_files/bootstrap-tab.js"></script>
-    <script src="./BaduaPage_files/bootstrap-tooltip.js"></script>
-    <script src="./BaduaPage_files/bootstrap-popover.js"></script>
-    <script src="./BaduaPage_files/bootstrap-button.js"></script>
-    <script src="./BaduaPage_files/bootstrap-collapse.js"></script>
-    <script src="./BaduaPage_files/bootstrap-carousel.js"></script>
-    <script src="./BaduaPage_files/bootstrap-typeahead.js"></script>
-    <script src="./BaduaPage_files/bootstrap-affix.js"></script>
-
-    <script src="./BaduaPage_files/holder.js"></script>
- 
-
-    <script src="./BaduaPage_files/application.js"></script>
-
-    <script src="./BaduaPage_files/syntax.js"></script>
-
-    <!-- Analytics
-    ================================================== -->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-21734044-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-<script type="text/javascript">
-  window.___gcfg = {lang: 'en-GB'};
-
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-
-
-  
-
-
-<iframe name="oauth2relay222305594" id="oauth2relay222305594" src="./BaduaPage_files/postmessageRelay.htm" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><div style="display: block; visibility: hidden; position: absolute; width: 313px; left: -10000px; top: -10000px; height: 72px; z-index: 2000000000;"><table cellpadding="0" cellspacing="0" dir="ltr" style="width: 313px; height: 72px;" frame="void" rules="none" class=" gc-bubbleDefault pls-container"><tbody><tr class="gc-reset"><td class="pls-topLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./BaduaPage_files/border_3.gif"></td><td class="pls-topTail gc-reset"><img class="pls-tailbottom gc-reset" style="width: 15px !important; height: 9px !important; max-width: 15px !important; max-height: 9px !important; display: none;" src="./BaduaPage_files/spacer.gif"><img class="pls-spacerbottom gc-reset" style="width: 1px !important; height: 1px !important; max-width: 1px !important; max-height: 1px !important; display: block;" src="./BaduaPage_files/spacer.gif"></td><td class="pls-topRight gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./BaduaPage_files/border_3.gif"></td></tr><tr class="gc-reset"><td class="pls-vertShimLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="./BaduaPage_files/spacer.gif"></td><td class="pls-vertShim gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="./BaduaPage_files/spacer.gif"></td><td class="pls-vertShimRight gc-reset"><img class="pls-dropTR gc-reset" style="width:5px !important; height:4px !important; max-width: 5px !important; max-height: 4px !important;" src="./BaduaPage_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-contentLeft gc-reset"><img class="pls-tailright gc-reset" style="width: 9px !important; height: 15px !important; max-width: 9px !important; max-height: 15px !important; display: none;" src="./BaduaPage_files/spacer.gif"><img class="pls-spacerright gc-reset" style="width: 1px !important; height: 1px !important; max-width: 1px !important; max-height: 1px !important; display: block;" src="./BaduaPage_files/spacer.gif"></td><td class="pls-contentWrap gc-reset"><img class="pls-spinner " style="width: 16px !important; height: 16px !important; max-width: 16px !important; max-height: 16px !important; visibility: hidden;" src="./BaduaPage_files/spinner-1.gif"><div class="goog-bubble-content gc-reset" style="width: 307px; height: 54px;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="margin: 0px; position: absolute; z-index: 1; border-style: none; outline: none; width: 307px; height: 54px;" tabindex="0" vspace="0" width="100%" id="I0_1394732991882" name="I0_1394732991882" src="./BaduaPage_files/hover.htm"></iframe></div></td><td class="pls-dropRight gc-reset"><img class="pls-tailleft gc-reset" style="width: 12px !important; height: 19px !important; max-width: 12px !important; max-height: 19px !important; display: none;" src="./BaduaPage_files/spacer.gif"><img class="pls-spacerleft gc-reset" style="width: 1px !important; height: 1px !important; max-width: 1px !important; max-height: 1px !important; display: block;" src="./BaduaPage_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-bottomLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./BaduaPage_files/border_3.gif"></td><td class="gc-reset"><table cellpadding="0" cellspacing="0" style="width:100%" class="gc-reset"><tbody><tr class="gc-reset"><td class="pls-vert gc-reset"><img class="pls-dropBL gc-reset" style="width:4px !important; height:5px !important; max-width: 4px !important; max-height: 5px !important;" src="./BaduaPage_files/spacer.gif"></td><td class="pls-dropBottom gc-reset"><img class="pls-tailtop gc-reset" style="width: 19px !important; height: 13px !important; max-width: 19px !important; max-height: 13px !important; display: inline; left: 6px; top: 0px;" src="./BaduaPage_files/spacer.gif"><img class="pls-spacertop gc-reset" style="width: 1px !important; height: 1px !important; max-width: 1px !important; max-height: 1px !important; display: none;" src="./BaduaPage_files/spacer.gif"></td></tr></tbody></table></td><td class="pls-vert gc-reset"><img class="pls-dropBR gc-reset" style="width:5px !important; height:5px !important; max-width: 5px !important; max-height: 5px !important;" src="./BaduaPage_files/spacer.gif"></td></tr></tbody></table></div><ins style="position: absolute !important; background-color: transparent !important; left: 1017.5px !important; top: 667px !important; width: 32px !important; height: 20px !important; z-index: -10000 !important; display: none !important;"></ins></body></html>
+  </body>
+</html>
