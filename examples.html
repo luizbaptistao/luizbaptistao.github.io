@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BA-DUA Website</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/badua.css">
+  </head>
+  <body>
+
+     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">BA-DUA</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="./examples.html">Examples</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+ 	<div class="container">
+
+
+<h1>How to running BA-DUA in 3 steps</h1>
+<h2>Offline Instrumentation Overview</h2>
+
+
+<h3>1° Step: Instrumentation</h3>
+<h4>Instrumenting .class</h4>
+
+<pre class="prettyprint lang-sh">java -jar ba-dua-[VERSION].jar-with-dependencies.jar instrument -src [path] -dest [path]
+<span class="nocode">
+-dest FILE : destination path to place the instrumented class files
+-src FILE  : path where files to be instrument are located (may be a .class file or a directory whith classes)
+</span></pre>
+
+
+<h3>2° Step: Getting coverage</h3> 
+<h4>Running JUnit tests under instrumented classes with output.file property</h4>
+
+<pre class="prettyprint lang-sh">java -Doutput.file=[name] org.junit.runner.JUnitCore [classTest]
+<span class="nocode">
+-output.file: vai gerar o arquivo de cobertura de DUAS, que sera usado no report
+</span></pre>
+
+<h3>3° Step: Report</h3>
+<h4>Usar o coverage.ser para exibir as DUAS cobertas/nao cobertas</h4>
+
+<pre class="prettyprint lang-sh">
+java -jar ba-dua-VERSION.jar-with-dependencies.jar report --all -input [path] -classes [path] 
+<span class="nocode">
+-classes FILE        : directory containing the classes which were instrumented. NOTE: this must point at the original, non-instrumented class files
+-input FILE          : the ba-dua execution data
+-show-all (--all)    : show all data data-flow coverage requirements
+-show-classes (--sc) : show class coverage
+-show-methods (--sm) : show method coverage
+</span></pre>
+
+<hr class="soften"/>
+
+<h2>Example Method Max (Offline Instrumentation)</h2>
+<pre class="prettyprint lang-java">
+<span class="nocode">Find max value in array</span>
+public static int max(int array [], int length){
+	int i = 0;
+	int max = array[++i]; //array[i++];
+	while(i < length){
+		if(array[i] > max)
+		max = array[i];
+		i = i + 1;
+	}
+	return max;
+}</pre>
+
+<h2> 
+    <button type="button" class="btn btn-default">Download Max Example</button>
+</h2>
+
+<pre class="prettyprint lang-sh">
+<span class="nocode">Prepararing enviroment:</span>
+export root= <span class="nocode">...</span>/BADUA-Example #(Change "..." for your own path)
+
+<span class="nocode">Compile the code</span>
+javac -g $root/src/java/Max.java
+mv $root/src/java/Max.class $root/classes/java
+
+<span class="nocode">Compile the test code</span>
+javac -cp $root/classes/java:$root/libs/junit.jar:$root/libs/org.hamcrest.core_1.3.0.v201303031735.jar $root/src/test/MaxTest.java
+mv $root/src/test/MaxTest.class $root/classes/test
+</pre>
+
+<pre class="prettyprint lang-sh">
+<span class="nocode">1° Step: Instrumentation</span>
+java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar instrument -src $root/classes/ -dest $root/instrClasses
+</pre>
+
+<pre class="prettyprint lang-sh">
+<span class="nocode">2° Step: Getting coverage</span>
+<span class="nocode">-Classpath:JUnit,Badua.jar,Java Class instrumented path,Test Class path</span>
+java -Doutput.file=$root/classes/test/coverage.ser -cp $root/libs/junit.jar:$root/libs/org.hamcrest.core_1.3.0.v201303031735.jar:$root/libs/ba-dua-0.0.2-jar-with-dependencies.jar:$root/instrClasses/java/:$root/classes/test/ org.junit.runner.JUnitCore  MaxTest
+</pre>
+
+
+<pre class="prettyprint lang-sh">
+<span class="nocode">3° Step: Report</span>
+<span class="nocode">--all</span>
+java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --all -input $root/classes/test/coverage.ser -classes $root/classes/java
+
+<span class="nocode">--sc</span>
+java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --sc -input $root/classes/test/coverage.ser -classes $root/classes/java
+
+<span class="nocode">--sm</span>
+java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --sm -input $root/classes/test/coverage.ser -classes $root/classes/java
+</pre>
+
+</div>
+
+
+     <div id="footer">
+      <div class="container">
+        <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+      </div>
+    </div>
+
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+  </body>
+
+</html>
