@@ -43,7 +43,7 @@
 <h4>Offline Instrumentation</h4>
 
 <pre class="prettyprint lang-sh">
-~$ java -jar ba-dua-[VERSION].jar-with-dependencies.jar instrument -src [path] -dest [path]
+~$ java -jar ba-dua-<strong>[VERSION]</strong>.jar-with-dependencies.jar instrument -src <strong>[FILE]</strong> -dest <strong>[FILE]</strong>
 <span class="nocode">
 -dest FILE : destination path to place the instrumented class files
 -src FILE  : path where files to be instrument are located (may be a .class file or a directory whith classes)
@@ -51,7 +51,7 @@
 <h3>or</h3>
 <h4>Agent Instrumentation</h4>
 <pre class="prettyprint lang-sh">
-~$ java -javaagent:[path]/ba-dua-[VERSION]-jar-with-dependencies.jar [MainClassPath]
+~$ java -javaagent:<strong>[PATH]</strong>/ba-dua-<strong>[VERSION]</strong>-jar-with-dependencies.jar <strong>[MAIN CLASS PATH]</strong>
 </pre>
 </div>
 
@@ -59,7 +59,7 @@
 <h2>2° Step: Getting coverage</h2> 
 <h4>Running JUnit tests under instrumented classes with output.file property</h4>
 <pre class="prettyprint lang-sh">
-~$ java -Doutput.file=[name] org.junit.runner.JUnitCore [classTest]
+~$ java -Doutput.file=<strong>[NAME]</strong> org.junit.runner.JUnitCore <strong>[TEST CLASS]</strong>
 <span class="nocode">
 -output.file: The coverage file used in next step
 </span></pre>
@@ -69,7 +69,7 @@
 <h2>3° Step: Report</h2>
 <h4>Using the generated coverage file to show coverage</h4>
 <pre class="prettyprint lang-sh">
-~$ java -jar ba-dua-VERSION.jar-with-dependencies.jar report --all -input [path] -classes [path] 
+~$ java -jar ba-dua-<strong>[VERSION]</strong>.jar-with-dependencies.jar report --all -input <strong>[FILE]</strong> -classes <strong>[FILE]</strong> 
 <span class="nocode">
 -classes FILE        : directory containing the classes which were instrumented. NOTE: this must point at the original, non-instrumented class files
 -input FILE          : the ba-dua execution data
@@ -90,7 +90,7 @@
 <h4>Prepararing enviroment:</h4>
 <pre class="prettyprint lang-sh">
 <span class="nocode">Setting root variable</span>
-~$ export root= <span class="nocode">...</span>/BADUA-Example #(Change "..." for your own path)
+~$ export root= <span class="nocode"><strong>...</strong></span>/BADUA-Example #(Change "..." for your own path)
 
 <span class="nocode">Compile the code</span>
 ~$ javac -g $root/src/java/Max.java
