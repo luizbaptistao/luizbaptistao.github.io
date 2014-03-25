@@ -36,12 +36,11 @@
  	<div class="container">
 
 
-<h1>How to running BA-DUA in 3 steps</h1>
-<h2>Offline Instrumentation Overview</h2>
+<h1 id="align-center">How to running BA-DUA in 3 steps</h1>
 
-
-<h3>1° Step: Instrumentation</h3>
-<h4>Instrumenting .class</h4>
+<div class="jumbotron">
+<h2>1° Step: Instrumentation</h2>
+<h4>Offline Instrumentation</h4>
 
 <pre class="prettyprint lang-sh">
 ~$ java -jar ba-dua-[VERSION].jar-with-dependencies.jar instrument -src [path] -dest [path]
@@ -49,20 +48,26 @@
 -dest FILE : destination path to place the instrumented class files
 -src FILE  : path where files to be instrument are located (may be a .class file or a directory whith classes)
 </span></pre>
+<h3>or</h3>
+<h4>Agent Instrumentation</h4>
+<pre class="prettyprint lang-sh">
+~$ java -javaagent:[path]/ba-dua-[VERSION]-jar-with-dependencies.jar [MainClassPath]
+</pre>
+</div>
 
-
-<h3>2° Step: Getting coverage</h3> 
+<div class="jumbotron">
+<h2>2° Step: Getting coverage</h2> 
 <h4>Running JUnit tests under instrumented classes with output.file property</h4>
-
 <pre class="prettyprint lang-sh">
 ~$ java -Doutput.file=[name] org.junit.runner.JUnitCore [classTest]
 <span class="nocode">
 -output.file: The coverage file used in next step
 </span></pre>
+</div>
 
-<h3>3° Step: Report</h3>
+<div class="jumbotron">
+<h2>3° Step: Report</h2>
 <h4>Using the generated coverage file to show coverage</h4>
-
 <pre class="prettyprint lang-sh">
 ~$ java -jar ba-dua-VERSION.jar-with-dependencies.jar report --all -input [path] -classes [path] 
 <span class="nocode">
@@ -72,6 +77,7 @@
 -show-classes (--sc) : show class coverage
 -show-methods (--sm) : show method coverage
 </span></pre>
+</div>
 
 <hr class="soften"/>
 
@@ -85,6 +91,7 @@
 <pre class="prettyprint lang-sh">
 <span class="nocode">Setting root variable</span>
 ~$ export root= <span class="nocode">...</span>/BADUA-Example #(Change "..." for your own path)
+
 <span class="nocode">Compile the code</span>
 ~$ javac -g $root/src/java/Max.java
 ~$ mv $root/src/java/Max.class $root/classes/java
