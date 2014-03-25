@@ -55,11 +55,11 @@
 
 <pre class="prettyprint lang-sh">java -Doutput.file=[name] org.junit.runner.JUnitCore [classTest]
 <span class="nocode">
--output.file: vai gerar o arquivo de cobertura de DUAS, que sera usado no report
+-output.file: The coverage file used in next step
 </span></pre>
 
 <h3>3° Step: Report</h3>
-<h4>Usar o coverage.ser para exibir as DUAS cobertas/nao cobertas</h4>
+<h4>Using the generated coverage file to show coverage</h4>
 
 <pre class="prettyprint lang-sh">
 java -jar ba-dua-VERSION.jar-with-dependencies.jar report --all -input [path] -classes [path] 
@@ -88,44 +88,46 @@ public static int max(int array [], int length){
 }</pre>
 
 <h2> 
+	<a href="./examples/Example.zip">
     <button type="button" class="btn btn-default">Download Max Example</button>
+    </a>
 </h2>
 
 <pre class="prettyprint lang-sh">
 <span class="nocode">Prepararing enviroment:</span>
-export root= <span class="nocode">...</span>/BADUA-Example #(Change "..." for your own path)
+ export root= <span class="nocode">...</span>/BADUA-Example #(Change "..." for your own path)
 
 <span class="nocode">Compile the code</span>
-javac -g $root/src/java/Max.java
-mv $root/src/java/Max.class $root/classes/java
+ javac -g $root/src/java/Max.java
+ mv $root/src/java/Max.class $root/classes/java
 
 <span class="nocode">Compile the test code</span>
-javac -cp $root/classes/java:$root/libs/junit.jar:$root/libs/org.hamcrest.core_1.3.0.v201303031735.jar $root/src/test/MaxTest.java
-mv $root/src/test/MaxTest.class $root/classes/test
+ javac -cp $root/classes/java:$root/libs/junit.jar:$root/libs/org.hamcrest.core_1.3.0.v201303031735.jar $root/src/test/MaxTest.java
+ mv $root/src/test/MaxTest.class $root/classes/test
 </pre>
 
 <pre class="prettyprint lang-sh">
 <span class="nocode">1° Step: Instrumentation</span>
-java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar instrument -src $root/classes/ -dest $root/instrClasses
+ java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar instrument -src $root/classes/ -dest $root/instrClasses
 </pre>
 
 <pre class="prettyprint lang-sh">
 <span class="nocode">2° Step: Getting coverage</span>
 <span class="nocode">-Classpath:JUnit,Badua.jar,Java Class instrumented path,Test Class path</span>
-java -Doutput.file=$root/classes/test/coverage.ser -cp $root/libs/junit.jar:$root/libs/org.hamcrest.core_1.3.0.v201303031735.jar:$root/libs/ba-dua-0.0.2-jar-with-dependencies.jar:$root/instrClasses/java/:$root/classes/test/ org.junit.runner.JUnitCore  MaxTest
+ java -Doutput.file=$root/classes/test/coverage.ser -cp $root/libs/junit.jar:$root/libs/org.hamcrest.core_1.3.0.v201303031735.jar:$root/libs/ba-dua-0.0.2-jar-with-dependencies.jar:$root/instrClasses/java/:$root/classes/test/ org.junit.runner.JUnitCore  MaxTest
 </pre>
 
 
-<pre class="prettyprint lang-sh">
+<pre class="prettyprint lang-bsh">
 <span class="nocode">3° Step: Report</span>
 <span class="nocode">--all</span>
-java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --all -input $root/classes/test/coverage.ser -classes $root/classes/java
+ java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --all -input $root/classes/test/coverage.ser -classes $root/classes/java
 
 <span class="nocode">--sc</span>
-java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --sc -input $root/classes/test/coverage.ser -classes $root/classes/java
+ java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --sc -input $root/classes/test/coverage.ser -classes $root/classes/java
 
 <span class="nocode">--sm</span>
-java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --sm -input $root/classes/test/coverage.ser -classes $root/classes/java
+ java -jar $root/libs/ba-dua-0.0.2-jar-with-dependencies.jar report --sm -input $root/classes/test/coverage.ser -classes $root/classes/java
 </pre>
 
 </div>
