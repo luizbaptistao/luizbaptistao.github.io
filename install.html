@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BA-DUA Website</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/badua.css">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ ga('create', 'UA-49101130-1', 'luizbaptistao.github.io');
+ ga('send', 'pageview');
+ </script>
+</head>
+<body>
+
+ <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="./index.html">Baduino</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="active"><a href="./install.html">Install</a></li>
+        <li><a href="./examples.html">Examples</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+<div class="container">
+  <hr class="soften"/>
+<div class="panel panel-primary"> 
+  <!--
+  <div class="page-header">
+    <h2 id="align-center"><b>Como instalar o plugin ?</b></h2>
+  </div>-->
+  <div class="panel-heading"><h1>Como instalar o plugin ?</h1></div>
+    <ol class="list-group">
+      <li class="list-group-item">Feche o Eclipse se estiver aberto.</li>
+      <li class="list-group-item">Baixe
+        <a href="br.usp.each.saeg.baduino.ui_1.0.0.201410071454.jar">
+        <button type="button" class="btn btn-info">
+          Baduino Eclipse Plugin</button>
+        </a>
+      </li>
+      <li class="list-group-item">Coloque o .jar dentro de {eclipse_folder}\dropins\</li>
+      <li class="list-group-item">Abra o Eclipse.</li>
+    </ol>
+
+  <div class="panel-body">
+  <h4>A partir de agora, é possível verificar as <b>Definition-Use Association(DUAs)</b> do programa, porém ainda não é possível verificar a cobertura de DUAs. Para saber como utilizar o plugin <a href="./examples.html"><span class="label label-info">click aqui</spam></a></h4>
+  </div>
+</div>
+<!--
+  <div class="page-header">
+    <h2 id="align-center"><b>O que mais preciso para pegar a cobertura dos testes ?</b></h2>
+  </div>-->
+<div class="panel panel-primary">
+  <div class="panel-heading"><h2>O que mais preciso para pegar a cobertura dos testes ?</h2></div>
+    <ol class="list-group">
+      <li class="list-group-item">
+        <a href="jacocoagent.jar">
+          <button type="button" class="btn btn-info">Jacocoagent.jar</button></a>
+          Localização padrão: [projectDir]/jacocoagent.jar
+      </li>
+
+      <li class="list-group-item">
+        <a href="jaguar.jar">
+          <button type="button" class="btn btn-info">Jaguar.jar</button></a>
+          Localização padrão: [projectDir]/jaguar.jar
+      </li>
+       <li class="list-group-item"><b>As classes compiladas.</b> Localização padrão: [projectDir]/target/classes</li>
+       <li class="list-group-item"><b>As classes de teste compiladas.</b> Localização padrão: [projectDir]/target/test-classes </li>
+    </ol>
+  </div>
+<!--
+  <div class="page-header">
+    <h2 id="align-center"><b>E se meu projeto não usa a estrutura de diretórios padrão do maven ?</b></h2>
+  </div>-->
+
+
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h2>E se meu projeto não usa a estrutura de diretórios padrão do maven ?</h2></div>
+  <div class="panel-body">
+  <p><h4>Se um dos arquivos (jacocoagent.jar e jaguar.jar) ou pastas (classes e classes de teste) não estiverem na localização padrão, você pode especificar o caminho manualmente, criando um arquivo na raiz do projeto chamado <b>baduino.properties</b>. Esse arquivo deve conter as seguintes informações:</h4></p>
+  </div>
+
+    <ul class="list-group">
+      <li class="list-group-item"><b>jacoco.agent.jar</b>=<i>&lt;localização do jacocoagent.jar&gt;</i></li>
+      <li class="list-group-item"><b>jaguar.jar</b>=<i>&lt;localização do jaguar.jar&gt;</i></li>
+      <li class="list-group-item"><b>compiled.tests.dir</b>=<i>&lt;localização das classes de teste compiladas&gt;</i></li>
+      <li class="list-group-item"><b>compiled.classes.dir</b>=<i>&lt;localização das classes compiladas&gt;</i></li>
+      <li class="list-group-item"><b>project.dir</b>=<i>&lt;Localização da raiz do projeto&gt;</i></li>
+    </ul>
+  </h3>
+  
+</div>
+
+
+      <div id="footer">
+        <div class="container">
+          <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+        </div>
+      </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
