@@ -43,25 +43,58 @@
 
 <div class="container" align="middle">
 
-    <h1 id="align-center">Source Code</h1>
+    <h1 id="align-center">Exemplo programa Max</h1>
+    <h2 class="lead">
+        O programa Max, consiste em um método de recebe como entrada 2 parametros (um array de inteiros e um inteiro com o tamanho do array),
+        e retorna o maior valor dentro daquele array.
+    </h2>
+
+    <h2 id="align-center">Codigo fonte</h2>
     <img src="./img/source.png"
          class="img-thumbnail">
 
-    <h1 id="align-center">Test Code</h1>
+    <h2 class="lead">
+        O caso de teste a seguir foi feito usando o JUnit, que verifica se o o retorno de max([1,2],2) é 2.
+    </h2>
+
+    <h2 id="align-center">Classe de teste</h2>
     <img src="./img/test.png"
          class="img-thumbnail">
 
-    <h1 id="align-center">Plugin View</h1>
+    <h2 class="lead">
+        Para conseguir a cobertura de DUAs precisamos rodar os testes com o Runner do JUnit modificado, que consiste em setar a BA-DUA como agent,
+        a BA-DUA instrumenta as classes que serão utilizadas pelo teste, e quando o teste é executado, ela coleta a cobertura das DUAs,
+        a Jaguar, responsável pelo JUnit Runner modificado, também é responsável por guardar os dados de cobertura após a finalização dos testes,
+        guardando em um arquivo chamado Baduino.xml na raiz do projeto.
+        <br><br>Todo esse processo é feito por: Clicar com o botão direito do mouse no projeto -> Baduino -> Run Tests
+        <br><br>Após ter a cobertura no XML, o plugin se encarrega de exibir as DUAs na sua visualização
+        <br><br>Para visualizar as DUAs: Clicar com o botão direito do mouse no projeto/pasta/pacote/classe -> Project/Folder/Package/Class Visualization
+        <br><br>Obs: A visualização é feita hierarquicamente, clicando em Project Visualization será exibido a cobertura de DUAs de todo o projeto, e assim por diante.
+    </h2>
+
+    <h2 id="align-center">Visualização do plugin</h2>
     <img src="./img/visualization.png"
          class="img-thumbnail">
 
-    <h1 id="align-center">Coverage True</h1>
+    <h2 class="lead">
+        Na visualização é possivel clicar nas DUAs e as linhas da Definição e Uso serão pintadas no Codigo Fonte, como mostra nas figuras abaixo.
+        <br><br> DUAs cobertas e não cobertas serão pintadas de verde e vermelho, respectivamente.
+        <br><br> Também é possivel remover todas as DUAs pintadas, clicando no Remove Highlight, no canto superior direito da View
+    </h2>
+
+    <h2 id="align-center">DUA Coberta</h2>
     <img src="./img/coveragetrue.png"
          class="img-thumbnail">
 
-    <h1 id="align-center">Coverage False</h1>
+    <h2 id="align-center">DUA não coberta</h2>
     <img src="./img/coveragefalse.png"
          class="img-thumbnail">
+</div>
+
+<div id="footer">
+    <div class="container">
+        <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+    </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
