@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baduino Eclipse Plugin</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/badua.css">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-49101130-1', 'luizbaptistao.github.io');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./index.html">Baduino</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="./index.html">Home</a></li>
+                <!--<li><a href="#about">About</a></li>-->
+                <!--<li><a href="#contact">Contact</a></li>-->
+                <li class="active"><a href="./install.html">Installation</a></li>
+                <li><a href="./howtouse.html">Examples</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<div class="container">
+    <hr class="soften"/>
+    <div class="panel panel-primary">
+        <!--
+        <div class="page-header">
+          <h2 id="align-center"><b>Como instalar o plugin ?</b></h2>
+        </div>-->
+        <div class="panel-heading"><h1>How to install ?</h1></div>
+        <div class="panel-body">
+            <p><h4>Option 1:</h4></p>
+        </div>
+        <ol class="list-group">
+
+            <li class="list-group-item">1. Close Eclipse if it is open.</li>
+            <li class="list-group-item">2. Download the
+                <a href="br.usp.each.saeg.baduino.ui_1.0.0.201410071454.jar">
+                    <button type="button" class="btn btn-info">
+                        Baduino Eclipse Plugin</button>
+                </a>
+            </li>
+            <li class="list-group-item">3. Paste it into {eclipse_folder}\dropins\</li>
+            <li class="list-group-item">4. nstallation completed! Open Eclipse!</li>
+        </ol>
+        <div class="panel-body">
+            <p><h4>Option 2:</h4></p>
+        </div>
+        <ol class="list-group">
+            <li class="list-group-item">1. From your Eclipse menu select Help → Install New Software... </li>
+            <li class="list-group-item">2. In the Install dialog enter <b>http://143.107.58.177/baduino/</b> at the Work with field.</li>
+            <li class="list-group-item">3. Check the latest EclEmma version and press <b>Next</b></li>
+            <li class="list-group-item">4. Follow the steps in the installation wizard.</li>
+        </ol>
+
+        <div class="panel-body">
+            <h4>Now, its possible to see method DUAs, but isn't possible collect DUAs coverage yet. If you want know how to use the plugin <a href="./howtouse.html"><span class="label label-info">click here</spam></a></h4>
+        </div>
+    </div>
+    <!--
+      <div class="page-header">
+        <h2 id="align-center"><b>O que mais preciso para pegar a cobertura dos testes ?</b></h2>
+      </div>-->
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h2>What else do I need to collect DUAs coverage ?</h2></div>
+        <ol class="list-group">
+            <li class="list-group-item">
+                <a href="jacocoagent.jar">
+                    <button type="button" class="btn btn-info">Jacocoagent.jar</button></a>
+                <small>Default location: [projectDir]/jacocoagent.jar</small>
+            </li>
+
+            <li class="list-group-item">
+                <a href="jaguar.jar">
+                    <button type="button" class="btn btn-info">Jaguar.jar</button></a>
+                <small>Default location: [projectDir]/jaguar.jar</small>
+
+            </li>
+            <li class="list-group-item"><b>A folder containing the compiled classes.</b> <small>Default location: [projectDir]/target/classes</small></li>
+            <li class="list-group-item"><b>A folder containing the compiled tests.</b> <small>Default location: [projectDir]/target/test-classes</small> </li>
+        </ol>
+    </div>
+    <!--
+      <div class="page-header">
+        <h2 id="align-center"><b>E se meu projeto não usa a estrutura de diretórios padrão do maven ?</b></h2>
+      </div>-->
+
+
+    <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h2>What if they are somewhere else ?</h2></div>
+        <div class="panel-body">
+            <p><h4>If one of the previous files (jacocoagent.jar and jaguar.jar) and folders (classes and test-classes) are not in the default
+            location you need to specify them in a file named <b>baduino.properties</b>. This file MUST be in the root of the
+            project and follow this pattern.</h4></p>
+        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item"><b>jacoco.agent.jar</b>=<i>&lt;jacocoagent.jar location&gt;</i></li>
+            <li class="list-group-item"><b>jaguar.jar</b>=<i>&lt;jaguar.jar location&gt;</i></li>
+            <li class="list-group-item"><b>compiled.tests.dir</b>=<i>&lt;Compiled tests location&gt;</i></li>
+            <li class="list-group-item"><b>compiled.classes.dir</b>=<i>&lt;Compiled class location&gt;</i></li>
+            <li class="list-group-item"><b>project.dir</b>=<i>&lt;Root location&gt;</i></li>
+        </ul>
+        <div class="panel-body">
+            <p><h4>Note: Every class test must be end with <b>*Test.class</b></h4></p>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <p class="muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
