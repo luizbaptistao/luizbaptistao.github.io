@@ -27,67 +27,74 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./index.html">Baduino</a>
+            <a class="navbar-brand" href="./index_en.html">Baduino</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index_en.html">Home</a></li>
                 <!--<li><a href="#about">About</a></li>-->
                 <!--<li><a href="#contact">Contact</a></li>-->
-                <li><a href="./install.html">Installation</a></li>
-                <li class="active"><a href="./howtouse.html">Examples</a></li>
+                <li><a href="./install_en.html">Installation</a></li>
+                <li class="active"><a href="./howtouse_en.html">Examples</a></li>
+                <li>
+                    <a href="howtouse.html">
+                        <img src="br.png" width="20">
+                    </a>
+                </li>
             </ul>
-                <img src="./flag.png" width="32" height="32">
-
         </div><!--/.nav-collapse -->
     </div>
 </div>
 
 <div class="container" align="middle">
 
-    <h1 id="align-center">Exemplo programa Max</h1>
+    <div class="jumbotron">
+        <h1 id="align-center">
+            Max
+        </h1>
+    </div>
     <h2 class="lead">
-        O programa Max consiste em um método de recebe como entrada dois parâmetros (um vetor de inteiros e um inteiro com o tamanho do vetor)
-        e retorna o maior valor dentro daquele vetor.
+        Max is a method that receive two parameters (An array of integers and an integer with the array length )
+        and return the maximum array value.
     </h2>
 
-    <h2 id="align-center">Codigo fonte</h2>
+    <h2 id="align-center">Source Code</h2>
     <img src="./img/source.png"
          class="img-thumbnail">
 
     <h2 class="lead">
-        O caso de teste a seguir foi feito usando o JUnit que verifica se o o retorno de max ([1,2] , 2) é 2.
+        The test case below was done with JUnit and this check if the return of max ([1,2] , 2) is 2.
     </h2>
 
-    <h2 id="align-center">Classe de teste</h2>
+    <h2 id="align-center">Test Class</h2>
     <img src="./img/test.png"
          class="img-thumbnail">
     <h2 class="lead">
-        Para conseguir a cobertura de ADUs é necessário rodar os JUnit testes com um Runner modificado que consiste em setar a JaCoCo (Programa que roda a BA-DUA) como agente,
-        e ela instrumentará as classes que serão utilizadas pelos testes e coletará a cobertura das ADUs.
-        <br>A <b>Jaguar</b>, responsável pelo JUnit Runner modificado, também é responsável por guardar os dados de cobertura após a finalização dos testes,
-        salvando a cobertura em um arquivo chamado <b>Baduino.xml</b> na raiz do projeto.
-        <br><br>Todo esse processo é feito: Clicando com o botão direito do mouse no projeto -> Baduino -> Run Tests
-        <br><br>Após ter a cobertura de ADUs no XML, o plugin se encarrega de exibir as ADUs na sua visualização.
-        <br><br>Para visualizar as ADUs: Clicar com o botão direito do mouse no projeto/pasta/pacote/classe -> Project/Folder/Package/Class Visualization
-        <br><br>Obs: A visualização é feita hierarquicamente, clicando em Project Visualization será exibido a cobertura de ADUs de todo o projeto, e assim por diante.
+        To get the DUAs coverage, this require to run JUnit tests with a custom runner, its set JaCoCo(Program who run the BA-DUA algorithm) as agent,
+        and it will instrument the classes used by the tests and will collect the DUAs coverage.
+        <br> The <b>Jaguar</b>, responsible by the custom JUnit Runner, also is responsible to store the coverage data after the tests ending,
+        saving coverage in an archive called Baduino.xml in the root project .
+        <br><br>This procedure is done by: Right click on project -> Baduino -> Run Tests
+        <br><br> After you get the DUAs coverage in XML, the plugin will show DUAs coverage on interface.
+        <br><br>To visualize DUAs: Right Click on project/folder/package/class -> Project/Folder/Package/Class Visualization
+        <br><br> Note: The visualization is hierarchical, by clicking in Project Visualization will be shown whole DUAs coverage of the project, and so on.
     </h2>
 
-    <h2 id="align-center">Visualização do plugin</h2>
+    <h2 id="align-center">Plugin interface</h2>
     <img src="./img/visualization.png"
          class="img-thumbnail">
 
     <h2 class="lead">
-        Na visualização é possível clicar nas ADUs e as linhas da <b>Definição</b> e do <b>Uso</b> serão pintadas no código fonte, como mostra nas figuras abaixo.
-        <br><br> ADUs cobertas e não cobertas serão pintadas de <font color="#7fff00">verde</font> e <font color="#dc143c">vermelho</font>, respectivamente.
-        <br><br> Também é possível remover todas as ADUs pintadas, clicando no <img src="./Highlighter Yellow-01.png"><b> Remove Highlight</b>, no canto superior direito da View
+        On the interface, its possible to click on DUAs and the Definition lines and Use lines will be highlighted in the source code like is show below.
+        <br><br> Covered DUAs and Uncovered DUAs will be highlighted of green and red,respectively.
+        <br><br> Also is possible to remove all highlights clicking on <img src="./Highlighter Yellow-01.png"><b> Remove Highlight</b> in the upper right corner of the View.
     </h2>
 
-    <h2 id="align-center">ADU Coberta</h2>
+    <h2 id="align-center">Covered DUA</h2>
     <img src="./img/coveragetrue.png"
          class="img-thumbnail">
 
-    <h2 id="align-center">ADU não coberta</h2>
+    <h2 id="align-center">Uncovered DUA</h2>
     <img src="./img/coveragefalse.png"
          class="img-thumbnail">
 </div>
