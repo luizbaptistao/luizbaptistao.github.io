@@ -55,8 +55,8 @@
         </h1>
     </div>
 
-    <ol class="list-group">
-            <li class="list-group-item">1. No menu do Eclipse, selecione Help -> Install New Software... </li>
+    <ol class="list-group lead">
+            <li class="list-group-item">1. No menu do Eclipse, selecione Help → Install New Software... </li>
             <li class="list-group-item">2. Na janela <b>Install</b>, no campo <b>Work with</b>, digite <b>http://143.107.58.177/baduino/</b></li>
             <li class="list-group-item">3. Marque a ultima versão da Baduino e clique em <b>Next</b></li>
             <li class="list-group-item">4. Siga os passos do instalador.</li>
@@ -87,13 +87,14 @@
         Se o seu projeto não está estruturado dessa forma, é necessário criar um arquivo auxiliar chamado <b>baduino.properties</b>
         que precisará conter 2 campos:
     </h2>
-         <ul class="list-group">
+         <ul class="list-group lead">
             <li class="list-group-item"><b>compiled.tests.dir</b>=<i>&lt;localização dos pacotes de teste compilados&gt;</i>
                 <br>Exemplo no Windows: compiled.tests.dir=C:\\Users\\youruser\\yourproject\\bin\\test-classes
             </li>
             <li class="list-group-item"><b>compiled.classes.dir</b>=<i>&lt;localização das classes compiladas&gt;</i>
                 <br>Exemplo no Linux: compiled.classes.dir=/home/youruser/yourproject/bin/classes
             </li>
+             <br>
             OBS.: A barra invertida '\' é um caractere de escape em java para String, portanto, Usuários de windows devem usar dupla barra invertida '\\'.
              <!-- Note: The backslash '\' is a Java escape character for String and char literals, so, Windows users must use double backslash '\\' to escape it. -->
         </ul>
