@@ -32,14 +32,14 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./index_en.html">Home</a></li>
                 <!--<li><a href="#about">About</a></li>-->
                 <!--<li><a href="#contact">Contact</a></li>-->
-                <li class="active"><a href="./installv2.html">Instalação</a></li>
-                <li><a href="./howtouse.html">Exemplo</a></li>
+                <li class="active"><a href="./installv2.html">Installation</a></li>
+                <li><a href="./howtouse_en.html">Examples</a></li>
                 <li>
-                    <a href="install_en.html">
-                        <img src="en.png" width="20">
+                    <a href="installv2.html">
+                        <img src="br.png" width="20">
                     </a>
                 </li>
             </ul>
@@ -57,7 +57,7 @@
     <ol class="list-group">
         <li class="list-group-item">1. From your Eclipse menu select Help → Install New Software... </li>
         <li class="list-group-item">2. In the Install dialog enter <b>http://143.107.58.177/baduino/</b> at the Work with field.</li>
-        <li class="list-group-item">3. Check the latest EclEmma version and press <b>Next</b></li>
+        <li class="list-group-item">3. Check the latest Baduino version and press <b>Next</b></li>
         <li class="list-group-item">4. Follow the steps in the installation wizard.</li>
     </ol>
 
@@ -69,24 +69,37 @@
     <h2 class="lead">
         Baduino assumes that project follow the default maven archetype.
         A Baduino parte do pressuposto que o projeto esta estruturado no padrão maven.
-        <br>• Maven plugin installed on Eclipse,
-        <br>• Ter o plugin do Maven instalado no Eclipse,
+        <ul>
+            <li>
+                Maven plugin installed on Eclipse,
+            </li>
+            <li>
+                Ter o plugin do Maven instalado no Eclipse,
+            </li>
+            <li>
+                Compiled Classes located in: <b>[projectDir]/target/classes</b>,
+            </li>
+            <li>
+                Classes compiladas estão localizadas em: <b>[projectDir]/target/classes</b>,
+            </li>
+            <li>
+                Compiled Test Classes located in : <b>[projectDir]/target/test-classes</b>,
+            </li>
+            <li>
+                Classes de testes compilados estão localizados em: <b>[projectDir]/target/test-classes</b>,
+            </li>
+            <li>
+                Every test class must be ended with <b>*Test.class</b>
+            </li>
+            <li>
+                Todas as classes de  testes devem terminar com <b>*Test.class</b>
+            </li>
 
-        <br>• Compiled Classes located in: <b>[projectDir]/target/classes</b>,
-        <br>• Classes compiladas estão localizadas em: <b>[projectDir]/target/classes</b>,
-
-        <br>• Complied Test Classes located in : <b>[projectDir]/target/test-classes</b>,
-        <br>• Classes de testes compilados estão localizados em: <b>[projectDir]/target/test-classes</b>,
-
-        <br>• Every test class must be ended with <b>*Test.class</b>
-        <br>• Todas as classes de  testes devem terminar com <b>*Test.class</b>
-
-        <br><br>
+        </ul>
         If your project was not structure on this way, its necessary create an archive called  <b>baduino.properties</b>
         that will contain two fields:
-        <br><br>
         Se o seu projeto não está estruturado dessa forma, é necessário criar um arquivo auxiliar chamado <b>baduino.properties</b>
-        que precisará conter 2 campos:  
+        que precisará conter 2 campos:
     </h2>
          <ul class="list-group">
             <li class="list-group-item"><b>compiled.tests.dir</b>=<i>&lt;compiled package test class location&gt;</i>
