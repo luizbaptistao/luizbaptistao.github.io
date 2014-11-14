@@ -68,24 +68,24 @@
         </h1>
     </div>
     <h2 class="lead">
-        A Baduino parte do pressuposto que o projeto esta estruturado no padrão maven.
+        A Baduino parte do pressuposto de que o projeto está estruturado no padrão maven. Isto requer:
         <ul>
             <li>
-                Ter o plugin do Maven instalado no Eclipse,
+                Plugin do Maven instalado no Eclipse,
             </li>
             <li>
-                Classes compiladas estão localizadas em: <b>[projectDir]/target/classes</b>,
+                Classes compiladas localizadas em: <b>[projectDir]/target/classes</b>,
             </li>
             <li>
-                Classes de testes compilados estão localizados em: <b>[projectDir]/target/test-classes</b>,
+                Classes de testes compilados localizadas em: <b>[projectDir]/target/test-classes</b>,
             </li>
             <li>
-                Todas as classes de  testes devem terminar com <b>*Test.class</b>
-            </li>
+                Classes de teste com o sufixo <b>*Test.class</b> no final.
+             </li>
 
         </ul>
         Se o seu projeto não está estruturado dessa forma, é necessário criar um arquivo auxiliar chamado <b>baduino.properties</b>
-        que precisará conter 2 campos:
+        que precisará conter os seguintes campos:
     </h2>
     <ul class="list-group lead">
         <li class="list-group-item"><b>compiled.tests.dir</b>=<i>&lt;localização dos pacotes de teste compilados&gt;</i>
@@ -95,7 +95,7 @@
             <br>Exemplo no Linux: compiled.classes.dir=/home/youruser/yourproject/bin/classes
         </li>
         <br>
-        OBS.: A barra invertida '\' é um caractere de escape em java para String, portanto, Usuários de windows devem usar dupla barra invertida '\\'.
+        Observação: A barra invertida '\' é um caractere de escape em Java para cadeia de caracteres, portanto, usuários de Windows devem usar dupla barra invertida '\\'.
         <!-- Note: The backslash '\' is a Java escape character for String and char literals, so, Windows users must use double backslash '\\' to escape it. -->
     </ul>
     <h2 class="lead"></h2>
